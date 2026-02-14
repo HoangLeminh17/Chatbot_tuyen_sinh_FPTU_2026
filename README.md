@@ -54,6 +54,10 @@ Chatbot-with-RAG-and-LangChain/
 - Mô hình embedding sử dụng: `BAAI/bge-m3` đa ngôn ngữ, phù hợp cho tiếng Việt.
 - Mô hình ngôn ngữ sử dụng: `deepseek/deepseek-r1-0528:free`, sử dụng qua API Key của [Open Router](https://openrouter.ai/)
 
+## Điều kiện chạy
+- API miễn phí, model public
+- Truy vấn còn lâu cho 1 câu hỏi
+
 ## Lấy API
 - Truy cập https://openrouter.ai/settings/keys để lấy API key
 - Tạo file ".env" trong repo, thiết lập OPENROUTER_API_KEY = API Key của bạn
