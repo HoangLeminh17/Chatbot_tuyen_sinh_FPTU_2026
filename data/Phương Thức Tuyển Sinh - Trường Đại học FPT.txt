@@ -1,0 +1,58 @@
+Phương Thức Tuyển Sinh
+
+TRƯỜNG ĐẠI HỌC FPT CÔNG BỐ DỰ KIẾN PHƯƠNG THỨC TUYỂN SINH 2026
+Trường Đại học FPT dự kiến tuyển sinh hệ đại học chính quy năm 2026 với 03 phương thức xét tuyển, được xây dựng theo định hướng kết hợp đa tiêu chí, nhằm đánh giá toàn diện năng lực học tập của thí sinh và mở rộng cơ hội tiếp cận môi trường đào tạo đại học gắn với thực tiễn.
+
+1. Phương thức tuyển sinh dự kiến:
+
+Phương thức 1: Xét tuyển thẳng - Áp dụng cho thí sinh thuộc diện xét tuyển thẳng theo quy định hiện hành của Bộ Giáo dục và Đào tạo.
+
+Phương thức 2: Xét tuyển kết hợp
+
+Xét tuyển dựa trên kết quả kỳ thi tốt nghiệp THPT kết hợp với kết quả học tập THPT, cùng với điểm ưu tiên theo quy định, nhằm đánh giá toàn diện quá trình học tập của thí sinh thay vì chỉ dựa trên một tiêu chí đơn lẻ.
+
+Điểm xét tuyển dự kiến được xác định như sau:
+
+Điểm xét tuyển = (Điểm thi THPT + ĐTB các năm học)/2 + Điểm ưu tiên
+
+Điểm xét tuyển làm tròn đến 2 số lẻ.
+
+Trong đó:
+
+– Điểm thi THPT quy định như sau:
+
+Tổ hợp Axx = (Điểm Toán*2 + Điểm 2 môn)/4*3, làm tròn đến 2 số lẻ; áp dụng đối với thí sinh đăng ký vào tất cả các ngành.
+Tổ hợp Cxx = (Điểm Văn*2 + Điểm 2 môn)/4*3, làm tròn đến 2 số lẻ; áp dụng đối với thí sinh đăng ký vào các ngành ngoài các ngành Công nghệ thông tin và Khoa học máy tính
+– ĐTB các năm học được tính như sau:
+
+ĐTB các năm học = [(ĐTB lớp 10) + (ĐTB lớp 11)*2 + (ĐTB lớp 12)*3]/2
+ĐTB các năm học được làm tròn đến 2 số lẻ.
+– Điểm ưu tiên theo quy định tại Điều 7 Quy chế Tuyển sinh đại học, tuyển sinh cao đẳng ngành Giáo dục Mầm non (Ban hành kèm theo Thông tư ban hành Quy chế tuyển sinh đại học, tuyển sinh cao đẳng ngành Giáo dục Mầm non)
+
+Phương thức 3: Ưu tiên xét tuyển
+
+Áp dụng đối với các nhóm thí sinh có nền tảng học tập hoặc quá trình đào tạo phù hợp, bao gồm:
+
+– Thí sinh tốt nghiệp THPT nước ngoài, tốt nghiệp THPT các trường thuộc Tổ chức giáo dục FPT;
+
+– Thí sinh có các chứng chỉ hoặc văn bằng: Chứng chỉ APTECH HDSE/ADSE, ARENA ADIM, SKILLKING, JETKING; Tốt nghiệp chương trình BTEC HND, Melbourne Polytechnic, FUNiX Software Engineering, Cao đẳng FPT Polytechnic.
+
+*Lưu ý chung: các thí sinh đăng ký học ngành Luật phải đảm bảo điều kiện theo quy định tại Quyết định số 678/QĐ-BGDĐT ngày 14 tháng 03 năm 2025 của Bộ trưởng Bộ Giáo dục và Đào tạo Ban hành Chuẩn chương trình đào tạo lĩnh vực pháp luật trình độ đại học.
+
+2. Đối tượng dự tuyển
+
+– Người đã được công nhận tốt nghiệp trung học phổ thông (THPT) của Việt Nam hoặc có bằng tốt nghiệp của nước ngoài được công nhận trình độ tương đương;
+
+– Người đã có bằng tốt nghiệp trung cấp ngành nghề thuộc cùng nhóm ngành dự tuyển và đã hoàn thành đủ yêu cầu khối lượng kiến thức văn hóa cấp THPT theo quy định của pháp luật.
+
+3. Chính sách ưu tiên dự kiến
+
+– Điểm khuyến khích, điểm ưu tiên đối tượng và khu vực thực hiện theo quy định của Bộ Giáo dục và Đào tạo.
+
+– Thí sinh là sinh viên thế hệ 1 – người đầu tiên trong gia đình (gồm phụ huynh hoặc người bảo trợ và tất cả anh chị em ruột) học đại học – được cộng 1,5 điểm vào Điểm xét tuyển
+
+4. Lịch trình tuyển sinh dự kiến
+
+– Đợt 1: theo lịch trình chung của Bộ Giáo dục và Đào tạo.
+
+– Các đợt tuyển bổ sung (nếu có) căn cứ vào kết quả đợt tuyển sinh trước đó và sẽ được thông báo.

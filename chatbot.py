@@ -1,77 +1,92 @@
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_openai import ChatOpenAI
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 import gradio as gr
-
-# import the .env file
+import os
 from dotenv import load_dotenv
+
 load_dotenv()
 
-# configuration
-DATA_PATH = r"data"
-CHROMA_PATH = r"chroma_db"
+CHROMA_PATH = "chroma_db"
 
-embeddings_model = OpenAIEmbeddings(model="text-embedding-3-large")
-
-# initiate the model
-llm = ChatOpenAI(temperature=0.5, model='gpt-4o-mini')
-
-# connect to the chromadb
-vector_store = Chroma(
-    collection_name="example_collection",
-    embedding_function=embeddings_model,
-    persist_directory=CHROMA_PATH, 
+# Embedding
+embeddings_model = HuggingFaceEmbeddings(
+    model_name="BAAI/bge-m3"
 )
 
-# Set up the vectorstore to be the retriever
-num_results = 5
-retriever = vector_store.as_retriever(search_kwargs={'k': num_results})
+# FREE LLM (OpenRouter)
+llm = ChatOpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.getenv("OPENROUTER_API_KEY"),
+    model="deepseek/deepseek-r1-0528:free",
+    temperature=0.3,
+)
 
-# call this function for every message added to the chatbot
+# Vector DB
+vector_store = Chroma(
+    collection_name="rag_fptu_2026",
+    embedding_function=embeddings_model,
+    persist_directory=CHROMA_PATH,
+)
+
+# Retriever (giảm k)
+retriever = vector_store.as_retriever(
+    search_type="mmr",
+    search_kwargs={"k":3, "fetch_k":6}
+)
+
 def stream_response(message, history):
-    #print(f"Input: {message}. History: {history}\n")
 
-    # retrieve the relevant chunks based on the question asked
     docs = retriever.invoke(message)
 
-    # add all the chunks to 'knowledge'
+    if not docs:
+        yield "Mình không thấy thông tin trong cơ sở dữ liệu"
+        return
+
+    # chỉ giữ history gần
+    history = history[-2:]
+    history_text = ""
+
+    for msg in history:
+        role = "Người dùng" if msg["role"]=="user" else "Trợ lý"
+        history_text += f"{role}: {msg['content']}\n"
+
+    # build knowledge (không nhân đôi + cắt ngắn)
     knowledge = ""
 
-    for doc in docs:
-        knowledge += doc.page_content+"\n\n"
+    for i, doc in enumerate(docs[:3], 1):
+        source = os.path.basename(doc.metadata.get("source","unknown"))
+        content = doc.page_content[:900]
+        knowledge += f"[Tài liệu {i} - {source}]\n{content}\n\n"
 
+    rag_prompt = f"""
+Bạn là trợ lý tuyển sinh của Trường Đại học FPT.
 
-    # make the call to the LLM (including prompt)
-    if message is not None:
+Chỉ trả lời dựa trên tri thức được cung cấp.
+Nếu không có thông tin thì nói không biết.
+Trả lời bằng tiếng Việt.
 
-        partial_message = ""
+Câu hỏi: {message}
 
-        rag_prompt = f"""
-        You are an assistent which answers questions based on knowledge which is provided to you.
-        While answering, you don't use your internal knowledge, 
-        but solely the information in the "The knowledge" section.
-        You don't mention anything to the user about the povided knowledge.
+Lịch sử:
+{history_text}
 
-        The question: {message}
+Tri thức:
+{knowledge}
+"""
 
-        Conversation history: {history}
+    partial = ""
+    for chunk in llm.stream(rag_prompt):
+        partial += chunk.content
+        yield partial
 
-        The knowledge: {knowledge}
-
-        """
-
-        print(rag_prompt)
-
-        # stream the response to the Gradio App
-        for response in llm.stream(rag_prompt):
-            partial_message += response.content
-            yield partial_message
-
-# initiate the Gradio app
-chatbot = gr.ChatInterface(stream_response, textbox=gr.Textbox(placeholder="Send to the LLM...",
-    container=False,
-    autoscroll=True,
-    scale=7),
+chatbot = gr.ChatInterface(
+    stream_response,
+    textbox=gr.Textbox(
+        placeholder="Hỏi về học phí, học bổng, ngành học...",
+        container=False,
+        scale=7
+    ),
 )
 
-# launch the Gradio app
-chatbot.launch()
+chatbot.launch(share=True)
