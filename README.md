@@ -58,3 +58,6 @@ Chatbot-with-RAG-and-LangChain/
 - Truy cập https://openrouter.ai/settings/keys để lấy API key
 - Tạo file ".env" trong repo, thiết lập OPENROUTER_API_KEY = API Key của bạn
 - Bạn có thể thử tìm kiếm các mô hình ngỗn ngữ khác phù hợp API của bạn: https://openrouter.ai/models
+
+## Giấy phép
+- Dự án này được phát hành theo giấy phép MIT.
