@@ -20,6 +20,7 @@ pip install -r requirements.txt
 ```
 
 ### 3. Chạy
+- Cần chạy xong ingest_database.py mới có folder chroma_db
 ```text
 python ingest_database.py  
 python chatbot.py   
@@ -48,6 +49,7 @@ Chatbot-with-RAG-and-LangChain/
 
 2. Mô hình và triển khai
 - Source code gốc: [ThomasJanssen-tech](https://github.com/ThomasJanssen-tech/Chatbot-with-RAG-and-LangChain)
+- Project gốc được cấp phép dưới MIT License
 - Code được phát triển, cải tiến để phù hợp cho bài toán tư vấn tuyển sinh của trường Đại học FPT
 - Mô hình embedding sử dụng: `BAAI/bge-m3` đa ngôn ngữ, phù hợp cho tiếng Việt.
 - Mô hình ngôn ngữ sử dụng: `deepseek/deepseek-r1-0528:free`, sử dụng qua API Key của [Open Router](https://openrouter.ai/)
